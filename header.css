@@ -1,0 +1,136 @@
+/* =========================
+   GOOGLE FONT IMPORT
+   ========================= */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+/* =========================
+   GLOBAL FONT & BASE STYLES
+   ========================= */
+body {
+  font-family: "Open Sans", "Times New Roman", Times, serif;
+  font-size: 1.125rem; /* ~18px */
+  font-weight: 400; /* default text weight */
+  line-height: 1.5; /* improve readability */
+  color: #111827; /* dark text for contrast */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+header, nav, a, button, ul, li {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/* =========================
+   BASE SMOOTHNESS FOR LINKS & BUTTONS
+   ========================= */
+header a,
+header button {
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    padding 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 0.25s ease,
+    color 0.25s ease;
+  transform-origin: center center;
+  will-change: transform, padding;
+  font-size: 1.125rem;
+  font-weight: 400;
+}
+
+/* =========================
+   NAV LINKS
+   ========================= */
+header nav ul li a {
+  display: inline-block;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  transform-origin: center center;
+  font-size: 1.125rem;
+  font-weight: 400;
+}
+
+header nav ul li a:hover {
+  transform: scale(1.12);
+  padding-left: 1.15rem;
+  padding-right: 1.15rem;
+  color: #3b82f6; /* Tailwind primary-500 blue */
+}
+
+/* =========================
+   AUTH BUTTONS
+   ========================= */
+header .lg\\:order-2 a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transform-origin: center center;
+  font-size: 1.125rem;
+  font-weight: 600; /* slightly bolder for buttons */
+}
+
+header .lg\\:order-2 a:hover {
+  transform: scale(1.14);
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+/* =========================
+   MOBILE HAMBURGER BUTTON
+   ========================= */
+.hamburger {
+  cursor: pointer;
+}
+
+.hamburger .bar {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #111827; /* Tailwind gray-900 */
+  border-radius: 2px;
+  transition: all 0.3s ease-in-out;
+  transform-origin: center;
+}
+
+/* Hamburger open/close animation */
+.hamburger .bar.rotate-45 {
+  transform: rotate(-90deg) translate(-4px, 5px);
+}
+
+.hamburger .bar.-rotate-45 {
+  transform: rotate(90deg) translate(2px);
+}
+
+.hamburger .bar.opacity-0 {
+  opacity: 0;
+}
+
+/* =========================
+   LOGO
+   ========================= */
+header nav > div a:first-child {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  transform-origin: center center;
+  font-size: 1.25rem;
+  font-weight: 600; /* slightly bolder for logo */
+}
+
+header nav > div a:first-child:hover {
+  transform: scale(1.3);
+}
+
+/* =========================
+   MOBILE MENU ANIMATION
+   ========================= */
+header nav > div > div {
+  transition: max-height 0.5s ease-in-out;
+}
+
+/* =========================
+   HEADER & NAV BACKGROUND
+   ========================= */
+header, header nav {
+  background-color: #ffffff !important;
+}

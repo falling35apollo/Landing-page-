@@ -1,0 +1,48 @@
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.hero-animated {
+  /* Subtle dark-blue animated gradient */
+  background: linear-gradient(
+    120deg,
+    #031029 0%,
+    #07243f 30%,
+    #0b3a60 60%,
+    #031029 100%
+  );
+  background-size: 300% 300%;
+  animation: gradientFlow 14s ease-in-out infinite;
+  position: relative;
+  overflow: hidden;
+  will-change: background-position;
+}
+
+/* Subtle floating light blobs overlay for depth */
+.hero-animated::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(circle at 10% 20%, rgba(10,50,100,0.18), transparent 12%),
+                    radial-gradient(circle at 85% 75%, rgba(4,30,60,0.14), transparent 18%);
+  mix-blend-mode: overlay;
+  filter: blur(40px) saturate(120%);
+  opacity: 0.9;
+  transform: translateZ(0);
+  animation: floatBlobs 18s ease-in-out infinite;
+}
+
+@keyframes floatBlobs {
+  0% { transform: translateY(0) scale(1); opacity: 0.95; }
+  50% { transform: translateY(-18px) scale(1.02); opacity: 1; }
+  100% { transform: translateY(0) scale(1); opacity: 0.95; }
+}

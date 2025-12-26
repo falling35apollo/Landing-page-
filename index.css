@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+
+/* Default light mode */
+body.light-mode {
+  background-color: white;
+  color: black;
+}
+
+/* Dark mode */
+body.dark-mode {
+  background-color: #121212;
+  color: white;
+}
+
+/* Optional: button styling */
+button {
+  padding: 0.5rem 1rem;
+  margin: 1rem;
+  cursor: pointer;
+}
